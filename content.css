@@ -1,0 +1,34 @@
+.HearMeOut-extension {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/icons/hearmeout-48.png");
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  float: right;
+  background-position: center;
+  background-size: cover;
+  border-radius: 18px;
+}
+
+.HearMeOut-disabled {
+  opacity: 0.1;
+  cursor: not-allowed;
+}
+
+.HearMeOut-loading {
+  cursor: progress;
+  opacity: 1;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

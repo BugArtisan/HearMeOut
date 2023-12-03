@@ -1,0 +1,156 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f8f8;
+  color: #444;
+  margin: 0;
+  padding: 0.5em;
+  font-size: 13px;
+}
+
+.container {
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  padding-top: 1em;
+}
+
+h2 {
+  color: #222;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+ul {
+  margin-top: 0;
+}
+
+.input-group {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 6px;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 250px;
+  height: 12px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#stopButton {
+  display: block;
+  margin-right: 1em;
+}
+
+#stopButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.footer-text {
+  font-size: 0.8em;
+  color: #666;
+  margin: 0.5em;
+  text-align: right;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.input-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.input-icon.check {
+  display: none;
+}
+
+#donate-button {
+  width: 100%;
+  display: block;
+}
+
+#donate-button img {
+  border-radius: 15px;
+  height: 45px;
+  margin: 0 auto;
+  display: block;
+}
+
+.help-text {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+#landing {
+  display: flex;
+}
+
+#landing span {
+  padding-top: 0.4em;
+}
+
+.separator {
+  flex-grow: 1;
+  border-bottom: 1px solid #d8d8d8;
+  height: 1em;
+  margin: 0 0.5em;
+}
+
+#actions {
+  display: flex;
+  align-items: center;
+}
+
+#status-container {
+  font-weight: bold;
+  font-size: 12px;
+  padding-top: 4px;
+  max-width: 170px;
+  display: none;
+  color: red;
+}
+
+#status-container img {
+  vertical-align: middle;
+}
