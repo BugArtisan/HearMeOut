@@ -8,6 +8,8 @@
   background-position: center;
   background-size: cover;
   border-radius: 18px;
+  position: relative;
+  z-index: 999;
 }
 
 .HearMeOut-disabled {
