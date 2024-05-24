@@ -6,7 +6,10 @@ const PLUG_STATUS = {
 
   ERROR_OPENAI: "HearMeOut: OpenApi error",
   ERROR_CONFIG: "HearMeOut: check API key and reload!",
+  ERROR_SUMMARY: "HearMeOut: AI cannot summarize url",
 };
+
+const CANNOT_SUMMARIZE_KEYWORD = "CANNOT";
 
 let currentPlugStatus = PLUG_STATUS.IDLE;
 
@@ -19,8 +22,11 @@ const setCurrentPlugStatus = (newStatus) => {
   });
 
   if (
-    newStatus == PLUG_STATUS.ERROR_CONFIG ||
-    newStatus == PLUG_STATUS.ERROR_OPENAI
+    [
+      PLUG_STATUS.ERROR_CONFIG,
+      PLUG_STATUS.ERROR_OPENAI,
+      PLUG_STATUS.ERROR_SUMMARY,
+    ].includes(newStatus)
   ) {
     alert(newStatus);
   }
@@ -38,6 +44,15 @@ const urlToAiAudio = (searchResultUrl, openAiKey) => {
 
     const openAiText = data.choices[0].message.content;
     console.log("HearMeOut, OpenAI response:", openAiText);
+
+    // gpt couldnt summarize for some reason
+    if (
+      !openAiText ||
+      openAiText.trim().toUpperCase() === CANNOT_SUMMARIZE_KEYWORD
+    ) {
+      setCurrentPlugStatus(PLUG_STATUS.ERROR_SUMMARY);
+      return;
+    }
 
     openAIHandler.textToSpeech(openAiText).then((audioUrl) => {
       if (!audioUrl) {

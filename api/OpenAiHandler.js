@@ -12,8 +12,13 @@ class OpenAIHandler {
       "Directly list the specific key points or tips detailed in the article from the provided URL in a bullet-point format. " +
       "Please limit your summary to around 200 words, ensuring each point is concise. " +
       "Avoid any general overview, introductory statements, or conclusions. " +
-      "Focus exclusively on enumerating the distinct points discussed in the article.";
+      "Focus exclusively on enumerating the distinct points discussed in the article." +
+      "IMPORTANT: If for any reason you cannot provide the summary, reply with only the word '" +
+      CANNOT_SUMMARIZE_KEYWORD +
+      "' in uppercase.";
     this.summarizeMaxTokens = 300;
+
+    // I tried gpt-4o but it cannot summarize, says it can't browse the web LOL
     this.summarizeModel = "gpt-3.5-turbo";
 
     this.ttsEndpoint = "https://api.openai.com/v1/audio/speech";
@@ -101,6 +106,8 @@ class OpenAIHandler {
         {
           message: {
             content: "This is a test mode text.",
+            // testing when gpt cannot summarize
+            // content: CANNOT_SUMMARIZE_KEYWORD,
           },
         },
       ],
