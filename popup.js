@@ -19,6 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Show/hide adv settings
+  document
+    .getElementById("toggle-advanced-settings")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const advancedSettingsClasses =
+        document.getElementById("advanced-settings").classList;
+      if (advancedSettingsClasses.contains("hidden")) {
+        advancedSettingsClasses.remove("hidden");
+      } else {
+        advancedSettingsClasses.add("hidden");
+      }
+    });
+
   addKeyInputEvent(KEYNAME_OPENAI);
 });
 
