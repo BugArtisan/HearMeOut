@@ -39,6 +39,7 @@ To install the extension, follow these steps:
 - Support more than Google search results?
 - Replay audio button
 - Display GPT text result ?
+- GPT-4o is not able to summarize the URLs, find out more details
 
 ## Donations
 
